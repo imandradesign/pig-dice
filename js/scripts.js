@@ -24,7 +24,7 @@ Player.prototype.compScore = function() {
   console.log('current roll is ' + newRoll);
   if (newRoll === 0) {
     return this.tempScore = 0;
-  } if (this.tempScore <= 12) {
+  } if (this.tempScore < 12) {
     this.tempScore += newRoll;
     console.log('turntotal = ' + this.tempScore);
     this.compScore();
