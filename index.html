@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link href="css/bootstrap.css" rel="stylesheet" type="text/css">
+    <link href="css/styles.css" rel="stylesheet" type="text/css">
+    <script src="js/jquery-3.3.1.js"></script>
+    <script src="js/scripts.js"></script>
+    <title>Pig Dice Game</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="jumbotron">
+        <h3>Pig Dice Game</h3>
+        <h5>Rules:</h5>
+        <ul>
+          <li>Each turn, a player repeatedly rolls a die until either a 1 is rolled or the player decides to "hold".</li>
+          <li>First player to 100 points wins</li>
+          <li>If the player rolls a 1, they score nothing and it becomes the next player's turn.</li>
+          <li>If the player rolls any other number, it is added to their turn total and the player's turn continues.</li>
+          <li>If a player chooses to "hold", their turn total is added to their score, and it becomes the next player's turn.</li>
+        </ul>
+      </div>
+
+      <div class="row">
+        <div class="col-md-4">
+          <button type="button" class="btn btn-info" id="sub-btn">Roll the die!</button>
+          <button type="button" class="btn btn-warning" id="hold-btn">Hold</button>
+        </div>
+        <div class="col-md-4">
+          <div class="score">
+            <h4>Current score:</h4><br>
+            <h5><span id="score"></span></h5>
+          </div>
+        </div>
+      </div>
+
+
+      <div class="results">
+        <div class="row">
+          <div class="col-md-4">
+            <h4>Computer score:</h4>
+            <p><span id="comp-score"></span></p>
+          </div>
+          <div class="col-md-4">
+            <h4>Your score:</h4>
+            <p><span id="player-score"></span></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
