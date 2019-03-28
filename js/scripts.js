@@ -1,4 +1,7 @@
 // Business logic
+var newPlayer = new Player();
+var compPlayer = new Player();
+
 function Player() {
   this.score = 0;
   this.tempScore = 0;
@@ -13,7 +16,8 @@ Player.prototype.rollDice = function() {
   return rollScore;
 }
 
-Player.prototype.roundScore = function() {
+// Computer business logic
+Player.prototype.turnCompScore = function() {
   this.tempScore = 0;
   this.compScore();
   this.score += this.tempScore;
@@ -35,11 +39,7 @@ Player.prototype.compScore = function() {
   console.log('finaltotal = ' + this.tempScore);
 }
 
-// var turnTotal = 0;
 
-var newPlayer = new Player();
-
-var compPlayer = new Player();
 
 $(document).ready(function(){
 
@@ -47,7 +47,10 @@ $(document).ready(function(){
   $('#comp-score').text(compPlayer.score);
 
   $("sub-btn").click(function(event){
-
+    var playerRoll = newPlayer.rollDice();
+    if (playerRoll === 0) {
+      compPlayer.turnCompScore();
+    }
   });
 
   $("hold-btn").click(function(event){
