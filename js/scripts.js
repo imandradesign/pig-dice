@@ -14,7 +14,6 @@ Player.prototype.rollDice = function() {
     rollScore = 0;
     this.tempScore = 0;
     }
-
   return rollScore;
 }
 
@@ -22,7 +21,6 @@ Player.prototype.rollDice = function() {
 Player.prototype.turnCompScore = function() {
   this.tempScore = 0;
   this.compScore();
-  this.score += this.tempScore;
   return this.score;
 }
 
@@ -34,17 +32,15 @@ Player.prototype.compScore = function() {
 
   if (newRoll === 0) {
     return this.tempScore = 0;
-    $('#comp-score').text(this.tempScore)
-  } else if (this.tempScore < 10) {
+  } else if (this.tempScore < 10 && newRoll > 0) {
     this.tempScore += newRoll;
     console.log('turntotal = ' + this.tempScore);
     this.compScore();
-  } else {
-    return this.tempScore;
-    $('#comp-score').text(this.tempScore);
+  } else if (this.tempScore >= 10) {
+    this.score += this.tempScore;
   }
 
-  console.log('finaltotal = ' + this.tempScore);
+  console.log('finaltotal = ' + this.score);
 }
 
 
@@ -58,13 +54,14 @@ $(document).ready(function(){
     event.preventDefault();
 
     var playerRoll = newPlayer.rollDice();
+
     if (playerRoll === 0) {
-      $('#score').text("You rolled a zero! The computer has rolled.")
+      $('#score').text("You rolled a 1! The computer has rolled.");
       compPlayer.turnCompScore();
+      $('#comp-score').text(compPlayer.score);
     } else {
       newPlayer.tempScore += playerRoll;
       $('#score').text(newPlayer.tempScore);
-      console.log('Player score is: ' + playerRoll)
     }
   });
 
