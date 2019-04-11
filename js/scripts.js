@@ -65,7 +65,22 @@ $(document).ready(function(){
     }
   });
 
-  $("hold-btn").click(function(event){
+  $("#hold-btn").click(function(event){
+    event.preventDefault();
 
+    if (newPlayer.tempScore !== 0){
+      newPlayer.score += newPlayer.tempScore;
+      $("#player-score").text(newPlayer.score);
+      newPlayer.tempScore = 0;
+      $('#score').text(newPlayer.tempScore);
+      compPlayer.turnCompScore();
+      $('#comp-score').text(compPlayer.score);
+    }
+
+    if (newPlayer.score >= 100){
+      alert("You won!")
+    } else if (compPlayer.score >= 100){
+      alert("The computer won!")
+    }
   });
 });
