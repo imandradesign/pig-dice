@@ -46,6 +46,8 @@ Player.prototype.compScore = function() {
 
 
 $(document).ready(function(){
+  $("#winner").hide();
+  $("#loser").hide();
 
   $('#player-score').text(newPlayer.score);
   $('#comp-score').text(compPlayer.score);
@@ -57,6 +59,7 @@ $(document).ready(function(){
 
     if (playerRoll === 0) {
       $('#score').text("You rolled a 1! The computer has rolled.");
+      newPlayer.tempScore = 0;
       compPlayer.turnCompScore();
       $('#comp-score').text(compPlayer.score);
     } else {
@@ -78,9 +81,29 @@ $(document).ready(function(){
     }
 
     if (newPlayer.score >= 100){
-      alert("You won!")
+      $("#winner").show();
+      $(".game").hide();
     } else if (compPlayer.score >= 100){
-      alert("The computer won!")
+      $("#loser").show();
+      $(".game").hide();
     }
+  });
+
+  $("#reload").click(function(event){
+    event.preventDefault();
+
+    $("#winner").hide();
+    $("#loser").hide();
+    $(".game").show();
+    $("#score").empty();
+
+    newPlayer.tempScore = 0;
+    newPlayer.score = 0;
+    compPlayer.tempScore = 0;
+    compPlayer.score = 0;
+
+    $('#player-score').text(newPlayer.score);
+    $('#comp-score').text(compPlayer.score);
+
   });
 });

@@ -21,31 +21,47 @@
         </ul>
       </div>
 
-      <div class="row">
-        <div class="col-md-4">
-          <button type="button" class="btn btn-info" id="roll-btn">Roll the die!</button>
-          <button type="button" class="btn btn-warning" id="hold-btn">Hold</button>
+      <div class="game">
+        <div class="row">
+          <div class="col-md-4">
+            <button type="button" class="btn btn-info" id="roll-btn">Roll the die!</button>
+            <button type="button" class="btn btn-warning" id="hold-btn">Hold</button>
+          </div>
+          <div class="col-md-4">
+            <div class="score">
+              <h4>Current roll:</h4><br>
+              <p><span id="score"></span></p>
+            </div>
+          </div>
         </div>
-        <div class="col-md-4">
-          <div class="score">
-            <h4>Current roll:</h4><br>
-            <p><span id="score"></span></p>
+
+
+        <div class="results">
+          <div class="row">
+            <div class="col-md-4">
+              <h4>Computer score:</h4>
+              <p><span id="comp-score"></span></p>
+            </div>
+            <div class="col-md-4">
+              <h4>Your score:</h4>
+              <p><span id="player-score"></span></p>
+            </div>
           </div>
         </div>
       </div>
 
+      <div class="alert alert-success" role="alert" id="winner">
+        <h1 class="alert-heading">You won!</h1>
+        <hr>
+        <h5>Way to outsmart the computer!</h5>
+        <button type="button" class="btn btn-success" id="reload">Play again?</button>
+      </div>
 
-      <div class="results">
-        <div class="row">
-          <div class="col-md-4">
-            <h4>Computer score:</h4>
-            <p><span id="comp-score"></span></p>
-          </div>
-          <div class="col-md-4">
-            <h4>Your score:</h4>
-            <p><span id="player-score"></span></p>
-          </div>
-        </div>
+      <div class="alert alert-info" role="alert" id="loser">
+        <h1 class="alert-heading">You lost!</h1>
+        <hr>
+        <h5>Looks like technology wins this one...</h5>
+        <button type="button" class="btn btn-info" id="reload">Play again?</button>
       </div>
     </div>
   </body>
