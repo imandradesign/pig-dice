@@ -5,11 +5,12 @@
     <link href="css/styles.css" rel="stylesheet" type="text/css">
     <script src="js/jquery-3.3.1.js"></script>
     <script src="js/scripts.js"></script>
+    <link rel="shortcut icon" href="img/pig.png">
     <title>Pig Dice Game</title>
   </head>
   <body>
     <div class="container">
-      <div class="jumbotron">
+      <div class="jumbotron" id="intro">
         <h3>Pig Dice Game</h3>
         <h5>Rules:</h5>
         <ul>
@@ -27,10 +28,15 @@
             <button type="button" class="btn btn-info" id="roll-btn">Roll the die!</button>
             <button type="button" class="btn btn-warning" id="hold-btn">Hold</button>
           </div>
-          <div class="col-md-4">
+          <div class="col-md-2">
             <div class="score">
               <h4>Current roll:</h4><br>
               <p><span id="score"></span></p>
+            </div>
+          </div>
+          <div class="col-md-2">
+            <div id="die">
+              <p id="current-roll"></p>
             </div>
           </div>
         </div>
@@ -54,14 +60,14 @@
         <h1 class="alert-heading">You won!</h1>
         <hr>
         <h5>Way to outsmart the computer!</h5>
-        <button type="button" class="btn btn-success" id="reload">Play again?</button>
+        <button type="button" class="btn btn-success" id="reload-win">Play again?</button>
       </div>
 
       <div class="alert alert-info" role="alert" id="loser">
         <h1 class="alert-heading">You lost!</h1>
         <hr>
         <h5>Looks like technology wins this one...</h5>
-        <button type="button" class="btn btn-info" id="reload">Play again?</button>
+        <button type="button" class="btn btn-info" id="reload-lose">Play again?</button>
       </div>
     </div>
   </body>

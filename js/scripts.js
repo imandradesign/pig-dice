@@ -8,12 +8,14 @@ function Player() {
 }
 
 Player.prototype.rollDice = function() {
-  var rollScore = Math.floor(Math.random() * 6);
-  // console.log(rollScore);
+  var rollScore = Math.floor(Math.random() * 6) + 1;
+  //console.log('Roll score: ' + rollScore);
   if (rollScore === 1) {
     rollScore = 0;
     this.tempScore = 0;
-    }
+    console.log("Rolled a 1");
+  }
+
   return rollScore;
 }
 
@@ -28,19 +30,21 @@ Player.prototype.turnCompScore = function() {
 Player.prototype.compScore = function() {
   var newRoll = this.rollDice();
 
-  console.log('current roll is: ' + newRoll);
+  console.log('Computer current roll is: ' + newRoll);
 
   if (newRoll === 0) {
     return this.tempScore = 0;
-  } else if (this.tempScore < 10 && newRoll > 0) {
+  } else if (this.score + this.tempScore > 100 || this.score + this.tempScore === 100) {
+    this.score += this.tempScore;
+  } else if (this.tempScore < 16 && newRoll > 0) {
     this.tempScore += newRoll;
-    console.log('turntotal = ' + this.tempScore);
+    console.log('Computer turntotal = ' + this.tempScore);
     this.compScore();
-  } else if (this.tempScore >= 10) {
+  } else if (this.tempScore > 15 && newRoll > 0) {
     this.score += this.tempScore;
   }
 
-  console.log('finaltotal = ' + this.score);
+  console.log('Computer finaltotal = ' + this.score);
 }
 
 
@@ -57,6 +61,8 @@ $(document).ready(function(){
 
     var playerRoll = newPlayer.rollDice();
 
+    //Work in progress $("#current-role").text(playerRoll);
+
     if (playerRoll === 0) {
       $('#score').text("You rolled a 1! The computer has rolled.");
       newPlayer.tempScore = 0;
@@ -65,6 +71,16 @@ $(document).ready(function(){
     } else {
       newPlayer.tempScore += playerRoll;
       $('#score').text(newPlayer.tempScore);
+    }
+
+    if (newPlayer.score >= 100){
+      $("#winner").show();
+      $(".game").hide();
+    }
+
+    if (compPlayer.score >= 100){
+      $("#loser").show();
+      $(".game").hide();
     }
   });
 
@@ -83,13 +99,33 @@ $(document).ready(function(){
     if (newPlayer.score >= 100){
       $("#winner").show();
       $(".game").hide();
-    } else if (compPlayer.score >= 100){
+    }
+
+    if (compPlayer.score >= 100){
       $("#loser").show();
       $(".game").hide();
     }
   });
 
-  $("#reload").click(function(event){
+
+  $("#reload-win").click(function(event){
+    event.preventDefault();
+
+    $("#winner").hide();
+    $("#loser").hide();
+    $(".game").show();
+    $("#score").empty();
+
+    newPlayer.tempScore = 0;
+    newPlayer.score = 0;
+    compPlayer.tempScore = 0;
+    compPlayer.score = 0;
+
+    $('#player-score').text(newPlayer.score);
+    $('#comp-score').text(compPlayer.score);
+
+  });
+  $("#reload-lose").click(function(event){
     event.preventDefault();
 
     $("#winner").hide();
