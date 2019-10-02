@@ -28,15 +28,20 @@
             <button type="button" class="btn btn-info" id="roll-btn">Roll the die!</button>
             <button type="button" class="btn btn-warning" id="hold-btn">Hold</button>
           </div>
-          <div class="col-md-2">
+          <div class="col-md-3">
             <div class="score">
-              <h4>Current roll:</h4><br>
-              <p><span id="score"></span></p>
+              <h4 class="text-head">Current roll score:</h4><br>
+              <h5><span id="score"></span></h5>
             </div>
           </div>
-          <div class="col-md-2">
-            <div id="die">
-              <p id="current-roll"></p>
+          <div class="col-md-2" id="die">
+            <div class="die">
+              <img src="img/one.png" alt="Die showing one side" id="one">
+              <img src="img/two.png" alt="Die showing one side" id="two">
+              <img src="img/three.png" alt="Die showing one side" id="three">
+              <img src="img/four.png" alt="Die showing one side" id="four">
+              <img src="img/five.png" alt="Die showing one side" id="five">
+              <img src="img/six.png" alt="Die showing one side" id="six">
             </div>
           </div>
         </div>
@@ -44,13 +49,13 @@
 
         <div class="results">
           <div class="row">
-            <div class="col-md-4">
-              <h4>Computer score:</h4>
-              <p><span id="comp-score"></span></p>
+            <div class="col-md-3">
+              <h4 class="text-head">Computer score:</h4>
+              <h5><span id="comp-score"></span></h5>
             </div>
-            <div class="col-md-4">
-              <h4>Your score:</h4>
-              <p><span id="player-score"></span></p>
+            <div class="col-md-3">
+              <h4 class="text-head">Your score:</h4>
+              <h5><span id="player-score"></span></h5>
             </div>
           </div>
         </div>

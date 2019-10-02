@@ -47,11 +47,21 @@ Player.prototype.compScore = function() {
   console.log('Computer finaltotal = ' + this.score);
 }
 
+var hideDice = function() {
+  $("#one").hide();
+  $("#two").hide();
+  $("#three").hide();
+  $("#four").hide();
+  $("#five").hide();
+  $("#six").hide();
+}
+
 
 
 $(document).ready(function(){
   $("#winner").hide();
   $("#loser").hide();
+  hideDice();
 
   $('#player-score').text(newPlayer.score);
   $('#comp-score').text(compPlayer.score);
@@ -61,16 +71,69 @@ $(document).ready(function(){
 
     var playerRoll = newPlayer.rollDice();
 
-    //Work in progress $("#current-role").text(playerRoll);
-
     if (playerRoll === 0) {
       $('#score').text("You rolled a 1! The computer has rolled.");
       newPlayer.tempScore = 0;
       compPlayer.turnCompScore();
       $('#comp-score').text(compPlayer.score);
     } else {
+      $("#score").show();
       newPlayer.tempScore += playerRoll;
       $('#score').text(newPlayer.tempScore);
+    }
+
+    if (playerRoll === 0){
+      $("#one").show()
+      $("#two").hide();
+      $("#three").hide();
+      $("#four").hide();
+      $("#five").hide();
+      $("#six").hide();
+    }
+
+    if (playerRoll === 2){
+      $("#two").show()
+      $("#one").hide();
+      $("#three").hide();
+      $("#four").hide();
+      $("#five").hide();
+      $("#six").hide();
+    }
+
+    if (playerRoll === 3){
+      $("#three").show()
+      $("#two").hide();
+      $("#one").hide();
+      $("#four").hide();
+      $("#five").hide();
+      $("#six").hide();
+    }
+
+    if (playerRoll === 4){
+      $("#four").show()
+      $("#two").hide();
+      $("#three").hide();
+      $("#one").hide();
+      $("#five").hide();
+      $("#six").hide();
+    }
+
+    if (playerRoll === 5){
+      $("#five").show()
+      $("#two").hide();
+      $("#three").hide();
+      $("#four").hide();
+      $("#one").hide();
+      $("#six").hide();
+    }
+
+    if (playerRoll === 6){
+      $("#six").show()
+      $("#two").hide();
+      $("#three").hide();
+      $("#four").hide();
+      $("#five").hide();
+      $("#one").hide();
     }
 
     if (newPlayer.score >= 100){
@@ -87,10 +150,14 @@ $(document).ready(function(){
   $("#hold-btn").click(function(event){
     event.preventDefault();
 
+    var compScoreDisplay = document.querySelector("#comp-score");
+
     if (newPlayer.tempScore !== 0){
       newPlayer.score += newPlayer.tempScore;
       $("#player-score").text(newPlayer.score);
       newPlayer.tempScore = 0;
+      hideDice();
+      $("#score").hide();
       $('#score').text(newPlayer.tempScore);
       compPlayer.turnCompScore();
       $('#comp-score').text(compPlayer.score);
@@ -115,6 +182,7 @@ $(document).ready(function(){
     $("#loser").hide();
     $(".game").show();
     $("#score").empty();
+    hideDice();
 
     newPlayer.tempScore = 0;
     newPlayer.score = 0;
@@ -132,6 +200,7 @@ $(document).ready(function(){
     $("#loser").hide();
     $(".game").show();
     $("#score").empty();
+    hideDice();
 
     newPlayer.tempScore = 0;
     newPlayer.score = 0;
