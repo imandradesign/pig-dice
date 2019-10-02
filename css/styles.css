@@ -3,12 +3,36 @@
   opacity:0.9;
 }
 
-#die {
-  height: 100px;
-  width: 100px;
-  padding: 50px;
-  margin: 50px auto;
-  border: 1px solid gray;
-  border-radius: 10px;
-  font-size:80px;
+#score, #comp-score, #player-score {
+  text-align: center;
+  display: block;
+}
+
+#roll-btn {
+  margin-right: 10px;
+}
+
+//#comp-score {
+  color: #fff;
+  -webkit-animation: glow 1s ease-in-out infinite alternate;
+  -moz-animation: glow 1s ease-in-out infinite alternate;
+  animation: glow 1s ease-in-out infinite alternate;
+}
+
+.row {
+  min-height: 150px;
+}
+
+.text-head {
+  display: block;
+  text-align: center;
+}
+
+@-webkit-keyframes glow {
+  from {
+    text-shadow: 0 0 10px #000, 0 0 20px #FFB6C1, 0 0 30px #FFB6C1, 0 0 40px #FFB6C1;
+  }
+  to {
+    text-shadow: 0 0 20px #000, 0 0 30px #FFB6C1, 0 0 40px #FFB6C1;
+  }
 }
