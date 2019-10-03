@@ -13,7 +13,7 @@ Player.prototype.rollDice = function() {
   if (rollScore === 1) {
     rollScore = 0;
     this.tempScore = 0;
-    console.log("Rolled a 1");
+    //console.log("Rolled a 1");
   }
 
   return rollScore;
@@ -30,7 +30,7 @@ Player.prototype.turnCompScore = function() {
 Player.prototype.compScore = function() {
   var newRoll = this.rollDice();
 
-  console.log('Computer current roll is: ' + newRoll);
+  //console.log('Computer current roll is: ' + newRoll);
 
   if (newRoll === 0) {
     return this.tempScore = 0;
@@ -38,13 +38,13 @@ Player.prototype.compScore = function() {
     this.score += this.tempScore;
   } else if (this.tempScore < 16 && newRoll > 0) {
     this.tempScore += newRoll;
-    console.log('Computer turntotal = ' + this.tempScore);
+    //console.log('Computer turntotal = ' + this.tempScore);
     this.compScore();
   } else if (this.tempScore > 15 && newRoll > 0) {
     this.score += this.tempScore;
   }
 
-  console.log('Computer finaltotal = ' + this.score);
+  //console.log('Computer finaltotal = ' + this.score);
 }
 
 var hideDice = function() {

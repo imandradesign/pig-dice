@@ -1,6 +1,10 @@
 #intro {
-  background-color: #FFAAAA;
-  opacity:0.9;
+  background: #000 url("../img/geometric.jpg") top center no-repeat;
+  color: white;
+}
+
+#intro h3 {
+  text-align: center;
 }
 
 #score, #comp-score, #player-score {
@@ -10,6 +14,33 @@
 
 #roll-btn {
   margin-right: 10px;
+  background-color: #17587E;
+  color: white;
+}
+
+#hold-btn {
+  background-color: #18C981;
+  color: white;
+}
+
+#winner {
+  background-color: #18C981;
+  color: white;
+}
+
+#reload-win {
+  background-color: #17587E;
+  color: white;
+}
+
+#loser {
+  background-color: #17587E;
+  color: white;
+}
+
+#reload-lose {
+  background-color: #18C981;
+  color: white;
 }
 
 //#comp-score {
@@ -26,6 +57,10 @@
 .text-head {
   display: block;
   text-align: center;
+}
+
+body {
+  background-color: #ECFFFF;
 }
 
 @-webkit-keyframes glow {
