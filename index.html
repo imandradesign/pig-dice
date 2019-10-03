@@ -12,6 +12,7 @@
     <div class="container">
       <div class="jumbotron" id="intro">
         <h3>Pig Dice Game</h3>
+        <hr>
         <h5>Rules:</h5>
         <ul>
           <li>Each turn, a player repeatedly rolls a die until either a 1 is rolled or the player decides to "hold".</li>
@@ -25,8 +26,8 @@
       <div class="game">
         <div class="row">
           <div class="col-md-4">
-            <button type="button" class="btn btn-info" id="roll-btn">Roll the die!</button>
-            <button type="button" class="btn btn-warning" id="hold-btn">Hold</button>
+            <button type="button" class="btn" id="roll-btn">Roll the die!</button>
+            <button type="button" class="btn" id="hold-btn">Hold</button>
           </div>
           <div class="col-md-3">
             <div class="score">
@@ -61,18 +62,18 @@
         </div>
       </div>
 
-      <div class="alert alert-success" role="alert" id="winner">
+      <div class="alert" role="alert" id="winner">
         <h1 class="alert-heading">You won!</h1>
         <hr>
         <h5>Way to outsmart the computer!</h5>
-        <button type="button" class="btn btn-success" id="reload-win">Play again?</button>
+        <button type="button" class="btn" id="reload-win">Play again?</button>
       </div>
 
-      <div class="alert alert-info" role="alert" id="loser">
+      <div class="alert" role="alert" id="loser">
         <h1 class="alert-heading">You lost!</h1>
         <hr>
         <h5>Looks like technology wins this one...</h5>
-        <button type="button" class="btn btn-info" id="reload-lose">Play again?</button>
+        <button type="button" class="btn" id="reload-lose">Play again?</button>
       </div>
     </div>
   </body>
