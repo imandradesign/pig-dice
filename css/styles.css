@@ -59,6 +59,10 @@
   text-align: center;
 }
 
+body {
+  background-color: #ECFFFF;
+}
+
 @-webkit-keyframes glow {
   from {
     text-shadow: 0 0 10px #000, 0 0 20px #FFB6C1, 0 0 30px #FFB6C1, 0 0 40px #FFB6C1;
