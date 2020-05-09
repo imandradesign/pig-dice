@@ -159,8 +159,10 @@ $(document).ready(function(){
       hideDice();
       $("#score").hide();
       $('#score').text(newPlayer.tempScore);
-      compPlayer.turnCompScore();
-      $('#comp-score').text(compPlayer.score);
+      if (newPlayer.score < 100){
+        compPlayer.turnCompScore();
+        $('#comp-score').text(compPlayer.score);
+      }
     }
 
     if (newPlayer.score >= 100){
