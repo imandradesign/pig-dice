@@ -43,15 +43,12 @@
   color: white;
 }
 
-//#comp-score {
-  color: #fff;
-  -webkit-animation: glow 1s ease-in-out infinite alternate;
-  -moz-animation: glow 1s ease-in-out infinite alternate;
-  animation: glow 1s ease-in-out infinite alternate;
+#temporary {
+  max-height: 50px !important;
 }
 
 .row {
-  min-height: 150px;
+  height: 120px;
 }
 
 .text-head {
@@ -61,13 +58,4 @@
 
 body {
   background-color: #ECFFFF;
-}
-
-@-webkit-keyframes glow {
-  from {
-    text-shadow: 0 0 10px #000, 0 0 20px #FFB6C1, 0 0 30px #FFB6C1, 0 0 40px #FFB6C1;
-  }
-  to {
-    text-shadow: 0 0 20px #000, 0 0 30px #FFB6C1, 0 0 40px #FFB6C1;
-  }
 }

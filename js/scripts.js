@@ -56,6 +56,29 @@ var hideDice = function() {
   $("#six").hide();
 }
 
+function remove_styles(){
+  $("link[href='css/comp-role.css']").remove();
+}
+
+function show_comp_roll() {
+  // Get HTML head element
+  var head = document.getElementsByTagName('HEAD')[0];
+
+  // Create new link Element
+  var link = document.createElement('link');
+
+  // set the attributes for link element
+  link.href = 'css/comp-role.css';
+  link.rel = 'stylesheet';
+  link.type = 'text/css';
+
+  // Append link element to HTML head
+  head.insertBefore(link, head.firstChild);
+
+  // Wait 2 seconds and remove CSS stylehseet from head
+  setTimeout(remove_styles, 2000);
+}
+
 
 
 $(document).ready(function(){
@@ -76,6 +99,7 @@ $(document).ready(function(){
       newPlayer.tempScore = 0;
       compPlayer.turnCompScore();
       $('#comp-score').text(compPlayer.score);
+      show_comp_roll();
     } else {
       $("#score").show();
       newPlayer.tempScore += playerRoll;
@@ -162,6 +186,7 @@ $(document).ready(function(){
       if (newPlayer.score < 100){
         compPlayer.turnCompScore();
         $('#comp-score').text(compPlayer.score);
+        show_comp_roll();
       }
     }
 
