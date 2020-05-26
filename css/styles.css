@@ -1,6 +1,8 @@
 #intro {
   background: #000 url("../img/geometric.jpg") top center no-repeat;
   color: white;
+  padding-top: 10px;
+  padding-bottom: 20px;
 }
 
 #intro h3 {
@@ -44,7 +46,8 @@
 }
 
 #temporary {
-  max-height: 50px !important;
+  height: 100px !important;
+  line-height: 3px;
 }
 
 .row {
