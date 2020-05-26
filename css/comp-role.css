@@ -1,0 +1,50 @@
+#comp-roll-text {
+  font-style: italic;
+  text-align: center;
+  display:block !important;
+  -moz-animation: cssAnimation 0s ease-in 1s forwards;
+  /* Firefox */
+  -webkit-animation: cssAnimation 0s ease-in 1s forwards;
+  /* Safari and Chrome */
+  -o-animation: cssAnimation 0s ease-in 1s forwards;
+  /* Opera */
+  animation: cssAnimation 0s ease-in 1s forwards;
+  -webkit-animation-fill-mode: forwards;
+  animation-fill-mode: forwards;
+}
+
+#comp-temp-score {
+  font-weight: bold;
+}
+
+@keyframes cssAnimation {
+    to {
+        width:0;
+        height:0;
+        overflow:hidden;
+        display:none !important;
+    }
+}
+@-webkit-keyframes cssAnimation {
+    to {
+        width:0;
+        height:0;
+        visibility:hidden;
+        display:none !important;
+    }
+}
+
+//#comp-roll-text {
+  color: #000;
+  -webkit-animation: glow 1s ease-in-out infinite alternate;
+  -moz-animation: glow 1s ease-in-out infinite alternate;
+  animation: glow 1s ease-in-out infinite alternate;
+}
+// @-webkit-keyframes glow {
+  from {
+    text-shadow: 0 0 10px #000, 0 0 20px #FFB6C1, 0 0 30px #FFB6C1, 0 0 40px #FFB6C1;
+  }
+  to {
+    text-shadow: 0 0 20px #000, 0 0 30px #FFB6C1, 0 0 40px #FFB6C1;
+  }
+}
